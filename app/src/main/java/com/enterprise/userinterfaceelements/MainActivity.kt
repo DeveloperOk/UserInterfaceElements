@@ -24,7 +24,10 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.rememberDrawerState
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.MutableState
+import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.rememberCoroutineScope
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -57,17 +60,25 @@ fun UserInterfaceElementsApp() {
     //With rememberNavBackStack, backstack survives the configuration changes such as screen rotation etc.
     val backStack = rememberNavBackStack(
         //NavigationStartScreen
-        AppNavigationScreens.MainScreenRoute
+        AppNavigationScreens.SplashScreenRoute
     )
 
     val scope = rememberCoroutineScope()
-    val drawerState = rememberDrawerState(DrawerValue.Closed)
+    val drawerLocked = rememberSaveable { mutableStateOf(false) }
+
+    val drawerState = rememberDrawerState(
+        initialValue = DrawerValue.Closed,
+        confirmStateChange = { newValue ->
+            !drawerLocked.value || newValue == DrawerValue.Closed
+        }
+    )
 
     ModalNavigationDrawer(
          modifier = Modifier.fillMaxSize(),
          drawerState = drawerState,
+         gesturesEnabled = !drawerLocked.value,
          drawerContent = { DrawerOfModalNavigationDrawer(scope = scope, drawerState = drawerState, backStack = backStack) },
-         content = { ContentOfModalNavigationDrawer(backStack = backStack) })
+         content = { ContentOfModalNavigationDrawer(backStack = backStack, drawerLocked = drawerLocked) })
 
 }
 
@@ -122,7 +133,10 @@ fun DrawerOfModalNavigationDrawer(
 
 
 @Composable
-fun ContentOfModalNavigationDrawer(backStack: NavBackStack<NavKey>) {
+fun ContentOfModalNavigationDrawer(
+    backStack: NavBackStack<NavKey>,
+    drawerLocked: MutableState<Boolean>
+) {
 
     Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
         Column(
@@ -131,7 +145,7 @@ fun ContentOfModalNavigationDrawer(backStack: NavBackStack<NavKey>) {
             modifier = Modifier.fillMaxSize().padding(innerPadding)
         ) {
 
-            AppNavigation(backStack = backStack)
+            AppNavigation(backStack = backStack, drawerLocked = drawerLocked)
 
         }
     }

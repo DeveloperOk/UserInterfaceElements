@@ -14,5 +14,9 @@ sealed interface AppNavigationScreens: NavKey {
     @Serializable
     object SideScreenRoute : AppNavigationScreens
 
+    @Serializable
+    object SplashScreenRoute : AppNavigationScreens
+
+
 
 }

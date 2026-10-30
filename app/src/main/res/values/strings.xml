@@ -6,4 +6,6 @@
 
     <string name="drawer_item_text_side">Side</string>
 
+    <string name="splash_screen_message">Find UI Element</string>
+
 </resources>
