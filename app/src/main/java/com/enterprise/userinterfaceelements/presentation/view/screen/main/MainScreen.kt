@@ -7,6 +7,6 @@ import androidx.compose.runtime.Composable
 @Composable
 fun MainScreen(){
 
-    Text(text = "Test Successful!")
+    Text(text = "Test Successful! Main Screen")
 
 }

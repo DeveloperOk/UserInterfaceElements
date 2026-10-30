@@ -10,6 +10,9 @@ sealed interface AppNavigationScreens: NavKey {
     // Define a main screen route that doesn't take any arguments
     @Serializable
     object MainScreenRoute : AppNavigationScreens
+    
+    @Serializable
+    object SideScreenRoute : AppNavigationScreens
 
 
 }

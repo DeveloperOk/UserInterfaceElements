@@ -1,3 +1,9 @@
 <resources>
+
     <string name="app_name">UserInterfaceElements</string>
+
+    <string name="drawer_item_text_main">Main</string>
+
+    <string name="drawer_item_text_side">Side</string>
+
 </resources>
