@@ -2,9 +2,9 @@
 
     <string name="app_name">UserInterfaceElements</string>
 
-    <string name="drawer_item_text_image">Bottom Navigation &amp; Image</string>
-    <string name="drawer_item_text_text">Bottom Navigation &amp; Text</string>
-    <string name="drawer_item_text_button">Bottom Navigation &amp; Button</string>
+    <string name="drawer_item_image">Bottom Navigation &amp; Image</string>
+    <string name="drawer_item_text">Bottom Navigation &amp; Text</string>
+    <string name="drawer_item_button">Bottom Navigation &amp; Button</string>
 
     <string name="splash_screen_message">Find UI Element</string>
 
