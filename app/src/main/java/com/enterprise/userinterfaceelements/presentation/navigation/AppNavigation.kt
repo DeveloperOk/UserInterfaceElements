@@ -8,9 +8,10 @@ import androidx.navigation3.runtime.NavKey
 import androidx.navigation3.runtime.entryProvider
 import androidx.navigation3.runtime.rememberSaveableStateHolderNavEntryDecorator
 import androidx.navigation3.ui.NavDisplay
-import com.enterprise.userinterfaceelements.presentation.view.screen.main.MainScreen
-import com.enterprise.userinterfaceelements.presentation.view.screen.side.SideScreen
+import com.enterprise.userinterfaceelements.presentation.view.screen.button.ButtonScreen
+import com.enterprise.userinterfaceelements.presentation.view.screen.image.ImageScreen
 import com.enterprise.userinterfaceelements.presentation.view.screen.splash.SplashScreen
+import com.enterprise.userinterfaceelements.presentation.view.screen.text.TextScreen
 
 
 @Composable
@@ -29,21 +30,25 @@ fun AppNavigation(backStack: NavBackStack<NavKey>, drawerLocked: MutableState<Bo
 
         entryProvider = entryProvider {
 
-            entry<AppNavigationScreens.MainScreenRoute> {
-                MainScreen()
-            }
-
-            entry<AppNavigationScreens.SideScreenRoute> {
-                SideScreen()
-            }
-
             entry<AppNavigationScreens.SplashScreenRoute> {
                 SplashScreen(drawerLocked = drawerLocked, navigateToMainScreen = {
 
-                    backStack.add(AppNavigationScreens.MainScreenRoute)
+                    backStack.add(AppNavigationScreens.TextScreenRoute)
                     backStack.removeAt(0)
 
                 })
+            }
+
+            entry<AppNavigationScreens.ImageScreenRoute> {
+                ImageScreen(backStack = backStack)
+            }
+
+            entry<AppNavigationScreens.TextScreenRoute> {
+                TextScreen(backStack = backStack)
+            }
+
+            entry<AppNavigationScreens.ButtonScreenRoute> {
+                ButtonScreen(backStack = backStack)
             }
 
         }

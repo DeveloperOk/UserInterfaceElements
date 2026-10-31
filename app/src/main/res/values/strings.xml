@@ -2,10 +2,15 @@
 
     <string name="app_name">UserInterfaceElements</string>
 
-    <string name="drawer_item_text_main">Main</string>
-
-    <string name="drawer_item_text_side">Side</string>
+    <string name="drawer_item_text_image">Bottom Navigation &amp; Image</string>
+    <string name="drawer_item_text_text">Bottom Navigation &amp; Text</string>
+    <string name="drawer_item_text_button">Bottom Navigation &amp; Button</string>
 
     <string name="splash_screen_message">Find UI Element</string>
+
+    <string name="bottom_navigation_bar_item_image">Image</string>
+    <string name="bottom_navigation_bar_item_text">Text</string>
+    <string name="bottom_navigation_bar_item_button">Button</string>
+
 
 </resources>

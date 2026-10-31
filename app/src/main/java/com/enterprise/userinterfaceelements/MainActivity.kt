@@ -95,7 +95,7 @@ fun DrawerOfModalNavigationDrawer(
         modifier = Modifier
             .background(color = Color.White)
             .fillMaxHeight()
-            .width(200.dp)
+            .width(280.dp)
             .systemBarsPadding()
             .padding(10.dp)
             .verticalScroll(rememberScrollState())
@@ -106,11 +106,11 @@ fun DrawerOfModalNavigationDrawer(
             modifier = Modifier
                 .fillMaxWidth()
                 .clickable {
-                    backStack.add(AppNavigationScreens.MainScreenRoute)
+                    backStack.add(AppNavigationScreens.ImageScreenRoute)
                     scope.launch { drawerState.close() }
                 }){
 
-            Text(text = stringResource(id = R.string.drawer_item_text_main))
+            Text(text = stringResource(id = R.string.drawer_item_text_image))
 
         }
 
@@ -119,14 +119,26 @@ fun DrawerOfModalNavigationDrawer(
             modifier = Modifier
                 .fillMaxWidth()
                 .clickable {
-                    backStack.add(AppNavigationScreens.SideScreenRoute)
+                    backStack.add(AppNavigationScreens.TextScreenRoute)
                     scope.launch { drawerState.close() }
                 }){
 
-            Text(text = stringResource(id = R.string.drawer_item_text_side))
+            Text(text = stringResource(id = R.string.drawer_item_text_text))
 
         }
 
+        Row(verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.Start,
+            modifier = Modifier
+                .fillMaxWidth()
+                .clickable {
+                    backStack.add(AppNavigationScreens.ButtonScreenRoute)
+                    scope.launch { drawerState.close() }
+                }){
+
+            Text(text = stringResource(id = R.string.drawer_item_text_button))
+
+        }
 
     }
 }
@@ -138,17 +150,8 @@ fun ContentOfModalNavigationDrawer(
     drawerLocked: MutableState<Boolean>
 ) {
 
-    Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-        Column(
-            horizontalAlignment = Alignment.CenterHorizontally,
-            verticalArrangement = Arrangement.Center,
-            modifier = Modifier.fillMaxSize().padding(innerPadding)
-        ) {
+    AppNavigation(backStack = backStack, drawerLocked = drawerLocked)
 
-            AppNavigation(backStack = backStack, drawerLocked = drawerLocked)
-
-        }
-    }
 }
 
 
