@@ -82,7 +82,11 @@ fun navigateToScreenIfScreenIsNotAlreadyAtTop(
     route: AppNavigationScreens
 ) {
 
-    if(backStack.lastOrNull() != route){
+    if(backStack.lastOrNull() == null){
+
+        backStack.add(route)
+
+    }else if(backStack.lastOrNull()!!::class != route::class){
 
         backStack.add(route)
 
