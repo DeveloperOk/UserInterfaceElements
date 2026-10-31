@@ -11,6 +11,11 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.navigation3.runtime.NavBackStack
 import androidx.navigation3.runtime.NavKey
+import com.enterprise.userinterfaceelements.presentation.view.components.button.AppElevatedButton
+import com.enterprise.userinterfaceelements.presentation.view.components.button.AppFilledButton
+import com.enterprise.userinterfaceelements.presentation.view.components.button.AppFilledTonalButton
+import com.enterprise.userinterfaceelements.presentation.view.components.button.AppOutlinedButton
+import com.enterprise.userinterfaceelements.presentation.view.components.button.AppTextButton
 import com.enterprise.userinterfaceelements.presentation.view.components.navigationbar.AppBottomNavigationBar
 
 
@@ -26,7 +31,15 @@ fun ButtonScreen(backStack: NavBackStack<NavKey>) {
             modifier = Modifier.fillMaxSize().padding(innerPadding)
         ) {
 
-            Text("Button Screen")
+            AppFilledButton()
+
+            AppFilledTonalButton()
+
+            AppOutlinedButton()
+
+            AppElevatedButton()
+
+            AppTextButton()
 
         }
     }
