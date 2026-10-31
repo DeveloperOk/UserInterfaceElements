@@ -12,5 +12,14 @@
     <string name="bottom_navigation_bar_item_text">Text</string>
     <string name="bottom_navigation_bar_item_button">Button</string>
 
+    <string name="text_screen_simple_text">1) Simple Text</string>
+    <string name="text_screen_wrap_text">2) This is a long text that automatically wraps to the next line (the next line the next line).</string>
+    <string name="text_screen_overflow_text">3) This is a long text that overflows aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</string>
+    <string name="text_screen_annotated_text_number">"4) "</string>
+    <string name="text_screen_annotated_text_annotated">"Annotated"</string>
+    <string name="text_screen_annotated_text_text">" Text"</string>
+
+
+
 
 </resources>
