@@ -107,6 +107,15 @@ fun DrawerOfModalNavigationDrawer(
                 scope.launch { drawerState.close() }
             })
 
+        Spacer(modifier = Modifier.height(5.dp))
+
+        AppDrawerItem(selected = AppNavigationScreens.LazyColumnScreenRoute == backStack.lastOrNull(),
+            title = stringResource(id = R.string.drawer_item_lazy_column),
+            onClick = {
+                navigateToScreenIfScreenIsNotAlreadyAtTop(backStack = backStack, route = AppNavigationScreens.LazyColumnScreenRoute)
+                scope.launch { drawerState.close() }
+            })
+
     }
 }
 
