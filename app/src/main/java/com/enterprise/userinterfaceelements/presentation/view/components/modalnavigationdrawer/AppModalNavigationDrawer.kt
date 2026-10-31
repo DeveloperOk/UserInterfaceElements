@@ -116,6 +116,15 @@ fun DrawerOfModalNavigationDrawer(
                 scope.launch { drawerState.close() }
             })
 
+        Spacer(modifier = Modifier.height(5.dp))
+
+        AppDrawerItem(selected = AppNavigationScreens.PagerScreenRoute == backStack.lastOrNull(),
+            title = stringResource(id = R.string.drawer_item_pager),
+            onClick = {
+                navigateToScreenIfScreenIsNotAlreadyAtTop(backStack = backStack, route = AppNavigationScreens.PagerScreenRoute)
+                scope.launch { drawerState.close() }
+            })
+
     }
 }
 

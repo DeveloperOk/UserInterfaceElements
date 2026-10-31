@@ -25,4 +25,7 @@ sealed interface AppNavigationScreens: NavKey {
 
     @Serializable
     object LazyColumnScreenRoute : AppNavigationScreens
+
+    object PagerScreenRoute : AppNavigationScreens
+
 }

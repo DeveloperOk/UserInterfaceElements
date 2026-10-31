@@ -12,6 +12,7 @@ import androidx.navigation3.ui.NavDisplay
 import com.enterprise.userinterfaceelements.presentation.view.screen.button.ButtonScreen
 import com.enterprise.userinterfaceelements.presentation.view.screen.image.ImageScreen
 import com.enterprise.userinterfaceelements.presentation.view.screen.lazycolumn.LazyColumnScreen
+import com.enterprise.userinterfaceelements.presentation.view.screen.pager.PagerScreen
 import com.enterprise.userinterfaceelements.presentation.view.screen.splash.SplashScreen
 import com.enterprise.userinterfaceelements.presentation.view.screen.text.TextScreen
 import com.enterprise.userinterfaceelements.presentation.view.screen.topappbar.TopAppBarScreen
@@ -64,6 +65,10 @@ fun AppNavigation(
 
             entry<AppNavigationScreens.LazyColumnScreenRoute> {
                 LazyColumnScreen()
+            }
+
+            entry<AppNavigationScreens.PagerScreenRoute> {
+                PagerScreen()
             }
 
         }
