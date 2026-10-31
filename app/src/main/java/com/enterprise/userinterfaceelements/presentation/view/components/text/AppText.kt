@@ -13,7 +13,9 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.text.withLink
+import androidx.compose.ui.unit.sp
 import com.enterprise.userinterfaceelements.R
+import com.enterprise.userinterfaceelements.ui.theme.PlanetFontFamily
 
 
 @Composable
@@ -101,4 +103,15 @@ fun AppClickablePartsText() {
         text = annotatedText,
         color = Color.Black
     )
+}
+
+@Composable
+fun AppCustomFontText(){
+
+    Text(
+        text = stringResource(R.string.text_screen_custom_font_text),
+        fontFamily = PlanetFontFamily,
+        fontSize = 20.sp
+    )
+
 }

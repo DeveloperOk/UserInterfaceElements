@@ -16,6 +16,7 @@ import androidx.navigation3.runtime.NavKey
 import com.enterprise.userinterfaceelements.presentation.view.components.navigationbar.AppBottomNavigationBar
 import com.enterprise.userinterfaceelements.presentation.view.components.text.AnnotatedText
 import com.enterprise.userinterfaceelements.presentation.view.components.text.AppClickablePartsText
+import com.enterprise.userinterfaceelements.presentation.view.components.text.AppCustomFontText
 import com.enterprise.userinterfaceelements.presentation.view.components.text.AppOverflowText
 import com.enterprise.userinterfaceelements.presentation.view.components.text.AppSimpleText
 import com.enterprise.userinterfaceelements.presentation.view.components.text.AppWrapText
@@ -50,6 +51,10 @@ fun TextScreen(backStack: NavBackStack<NavKey>) {
             Spacer(modifier = Modifier.height(10.dp))
 
             AppClickablePartsText()
+
+            Spacer(modifier = Modifier.height(10.dp))
+
+            AppCustomFontText()
 
         }
     }
