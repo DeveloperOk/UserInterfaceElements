@@ -49,7 +49,7 @@ fun AppModalNavigationDrawer(
         drawerState = drawerState,
         gesturesEnabled = !drawerLocked.value,
         drawerContent = { DrawerOfModalNavigationDrawer(scope = scope, drawerState = drawerState, backStack = backStack) },
-        content = { ContentOfModalNavigationDrawer(backStack = backStack, drawerLocked = drawerLocked) })
+        content = { ContentOfModalNavigationDrawer(backStack = backStack, drawerLocked = drawerLocked, drawerState = drawerState,) })
 
 }
 
@@ -126,10 +126,11 @@ fun AppDrawerItem(selected: Boolean,
 @Composable
 fun ContentOfModalNavigationDrawer(
     backStack: NavBackStack<NavKey>,
-    drawerLocked: MutableState<Boolean>
+    drawerLocked: MutableState<Boolean>,
+    drawerState: DrawerState
 ) {
 
-    AppNavigation(backStack = backStack, drawerLocked = drawerLocked)
+    AppNavigation(backStack = backStack, drawerLocked = drawerLocked, drawerState = drawerState,)
 
 }
 

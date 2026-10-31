@@ -1,5 +1,6 @@
 package com.enterprise.userinterfaceelements.presentation.navigation
 
+import androidx.compose.material3.DrawerState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.MutableState
 import androidx.lifecycle.viewmodel.navigation3.rememberViewModelStoreNavEntryDecorator
@@ -15,7 +16,11 @@ import com.enterprise.userinterfaceelements.presentation.view.screen.text.TextSc
 
 
 @Composable
-fun AppNavigation(backStack: NavBackStack<NavKey>, drawerLocked: MutableState<Boolean>) {
+fun AppNavigation(
+    backStack: NavBackStack<NavKey>,
+    drawerLocked: MutableState<Boolean>,
+    drawerState: DrawerState
+) {
 
     NavDisplay(
         backStack = backStack,
@@ -44,7 +49,7 @@ fun AppNavigation(backStack: NavBackStack<NavKey>, drawerLocked: MutableState<Bo
             }
 
             entry<AppNavigationScreens.TextScreenRoute> {
-                TextScreen(backStack = backStack)
+                TextScreen(backStack = backStack, drawerState = drawerState,)
             }
 
             entry<AppNavigationScreens.ButtonScreenRoute> {

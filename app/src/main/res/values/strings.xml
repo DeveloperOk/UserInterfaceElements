@@ -20,4 +20,6 @@
     <string name="text_screen_annotated_text_text">" Text"</string>
     <string name="text_screen_custom_font_text">6) Custom Font Text</string>
 
+    <string name="text_screen_app_top_app_bar_title">User Interface Elements</string>
+
 </resources>
