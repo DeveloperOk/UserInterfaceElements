@@ -39,7 +39,7 @@ fun AppNavigation(
             entry<AppNavigationScreens.SplashScreenRoute> {
                 SplashScreen(drawerLocked = drawerLocked, navigateToMainScreen = {
 
-                    backStack.add(AppNavigationScreens.TextScreenRoute)
+                    navigateToScreenIfScreenIsNotAlreadyAtTop(backStack = backStack, route = AppNavigationScreens.TextScreenRoute)
                     backStack.removeAt(0)
 
                 })
@@ -64,5 +64,18 @@ fun AppNavigation(
         }
 
     )
+
+}
+
+fun navigateToScreenIfScreenIsNotAlreadyAtTop(
+    backStack: NavBackStack<NavKey>,
+    route: AppNavigationScreens
+) {
+
+    if(backStack.lastOrNull() != route){
+
+        backStack.add(route)
+
+    }
 
 }

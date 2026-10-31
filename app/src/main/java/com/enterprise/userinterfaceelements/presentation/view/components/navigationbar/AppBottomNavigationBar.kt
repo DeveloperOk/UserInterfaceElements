@@ -9,6 +9,8 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.navigation3.runtime.NavBackStack
 import androidx.navigation3.runtime.NavKey
+import com.enterprise.userinterfaceelements.presentation.navigation.AppNavigationScreens
+import com.enterprise.userinterfaceelements.presentation.navigation.navigateToScreenIfScreenIsNotAlreadyAtTop
 
 
 @Composable
@@ -25,7 +27,7 @@ fun AppBottomNavigationBar(
             NavigationBarItem(
                 selected = item.route == backStack.lastOrNull(),
                 onClick = {
-                    backStack.add(item.route)
+                    navigateToScreenIfScreenIsNotAlreadyAtTop(backStack = backStack, route = item.route)
                 },
                 icon = { Icon(painter = painterResource(item.iconResourceId),
                     contentDescription = stringResource( item.titleResourceId)) },

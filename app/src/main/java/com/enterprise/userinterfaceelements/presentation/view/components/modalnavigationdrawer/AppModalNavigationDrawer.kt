@@ -32,6 +32,7 @@ import androidx.navigation3.runtime.NavKey
 import com.enterprise.userinterfaceelements.R
 import com.enterprise.userinterfaceelements.presentation.navigation.AppNavigation
 import com.enterprise.userinterfaceelements.presentation.navigation.AppNavigationScreens
+import com.enterprise.userinterfaceelements.presentation.navigation.navigateToScreenIfScreenIsNotAlreadyAtTop
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 
@@ -75,7 +76,7 @@ fun DrawerOfModalNavigationDrawer(
         AppDrawerItem(selected = AppNavigationScreens.ImageScreenRoute == backStack.lastOrNull(),
             title = stringResource(id = R.string.drawer_item_image),
             onClick = {
-                backStack.add(AppNavigationScreens.ImageScreenRoute)
+                navigateToScreenIfScreenIsNotAlreadyAtTop(backStack = backStack, route = AppNavigationScreens.ImageScreenRoute)
                 scope.launch { drawerState.close() }
             })
 
@@ -84,7 +85,7 @@ fun DrawerOfModalNavigationDrawer(
         AppDrawerItem(selected = AppNavigationScreens.TextScreenRoute == backStack.lastOrNull(),
             title = stringResource(id = R.string.drawer_item_text),
             onClick = {
-                backStack.add(AppNavigationScreens.TextScreenRoute)
+                navigateToScreenIfScreenIsNotAlreadyAtTop(backStack = backStack, route = AppNavigationScreens.TextScreenRoute)
                 scope.launch { drawerState.close() }
             })
 
@@ -93,7 +94,7 @@ fun DrawerOfModalNavigationDrawer(
         AppDrawerItem(selected = AppNavigationScreens.ButtonScreenRoute == backStack.lastOrNull(),
             title = stringResource(id = R.string.drawer_item_button),
             onClick = {
-                backStack.add(AppNavigationScreens.ButtonScreenRoute)
+                navigateToScreenIfScreenIsNotAlreadyAtTop(backStack = backStack, route = AppNavigationScreens.ButtonScreenRoute)
                 scope.launch { drawerState.close() }
             })
 
@@ -102,7 +103,7 @@ fun DrawerOfModalNavigationDrawer(
         AppDrawerItem(selected = AppNavigationScreens.TopAppBarScreenRoute == backStack.lastOrNull(),
             title = stringResource(id = R.string.drawer_item_top_app_bar),
             onClick = {
-                backStack.add(AppNavigationScreens.TopAppBarScreenRoute)
+                navigateToScreenIfScreenIsNotAlreadyAtTop(backStack = backStack, route = AppNavigationScreens.TopAppBarScreenRoute)
                 scope.launch { drawerState.close() }
             })
 
