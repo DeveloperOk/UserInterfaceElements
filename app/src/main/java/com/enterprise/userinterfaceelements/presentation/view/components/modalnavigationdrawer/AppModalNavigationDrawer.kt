@@ -97,6 +97,15 @@ fun DrawerOfModalNavigationDrawer(
                 scope.launch { drawerState.close() }
             })
 
+        Spacer(modifier = Modifier.height(5.dp))
+
+        AppDrawerItem(selected = AppNavigationScreens.TopAppBarScreenRoute == backStack.lastOrNull(),
+            title = stringResource(id = R.string.drawer_item_top_app_bar),
+            onClick = {
+                backStack.add(AppNavigationScreens.TopAppBarScreenRoute)
+                scope.launch { drawerState.close() }
+            })
+
     }
 }
 

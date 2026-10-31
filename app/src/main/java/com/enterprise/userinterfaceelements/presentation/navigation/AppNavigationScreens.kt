@@ -20,6 +20,7 @@ sealed interface AppNavigationScreens: NavKey {
     @Serializable
     object ButtonScreenRoute : AppNavigationScreens
 
-
+    @Serializable
+    object TopAppBarScreenRoute : AppNavigationScreens
 
 }

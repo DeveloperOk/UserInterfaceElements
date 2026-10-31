@@ -5,6 +5,7 @@
     <string name="drawer_item_image">Bottom Navigation &amp; Image</string>
     <string name="drawer_item_text">Bottom Navigation &amp; Text</string>
     <string name="drawer_item_button">Bottom Navigation &amp; Button</string>
+    <string name="drawer_item_top_app_bar">TopAppBar</string>
 
     <string name="splash_screen_message">Find UI Element</string>
 
@@ -21,5 +22,7 @@
     <string name="text_screen_custom_font_text">6) Custom Font Text</string>
 
     <string name="text_screen_app_top_app_bar_title">User Interface Elements</string>
+
+    <string name="top_app_bar_screen_app_top_app_bar_title">TopAppBar</string>
 
 </resources>

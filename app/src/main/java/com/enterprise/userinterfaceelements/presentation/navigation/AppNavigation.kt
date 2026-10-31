@@ -13,6 +13,7 @@ import com.enterprise.userinterfaceelements.presentation.view.screen.button.Butt
 import com.enterprise.userinterfaceelements.presentation.view.screen.image.ImageScreen
 import com.enterprise.userinterfaceelements.presentation.view.screen.splash.SplashScreen
 import com.enterprise.userinterfaceelements.presentation.view.screen.text.TextScreen
+import com.enterprise.userinterfaceelements.presentation.view.screen.topappbar.TopAppBarScreen
 
 
 @Composable
@@ -54,6 +55,10 @@ fun AppNavigation(
 
             entry<AppNavigationScreens.ButtonScreenRoute> {
                 ButtonScreen(backStack = backStack)
+            }
+
+            entry<AppNavigationScreens.TopAppBarScreenRoute> {
+                TopAppBarScreen(backStack = backStack)
             }
 
         }
