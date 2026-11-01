@@ -73,6 +73,15 @@ fun DrawerOfModalNavigationDrawer(
             .verticalScroll(rememberScrollState())
     ){
 
+        AppDrawerItem(selected = AppNavigationScreens.TextFieldScreenRoute == backStack.lastOrNull(),
+            title = stringResource(id = R.string.drawer_item_textfield),
+            onClick = {
+                navigateToScreenIfScreenIsNotAlreadyAtTop(backStack = backStack, route = AppNavigationScreens.TextFieldScreenRoute)
+                scope.launch { drawerState.close() }
+            })
+
+        Spacer(modifier = Modifier.height(5.dp))
+
         AppDrawerItem(selected = AppNavigationScreens.ImageScreenRoute == backStack.lastOrNull(),
             title = stringResource(id = R.string.drawer_item_image),
             onClick = {

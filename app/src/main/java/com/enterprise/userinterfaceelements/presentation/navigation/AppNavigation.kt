@@ -15,6 +15,7 @@ import com.enterprise.userinterfaceelements.presentation.view.screen.lazycolumn.
 import com.enterprise.userinterfaceelements.presentation.view.screen.pager.PagerScreen
 import com.enterprise.userinterfaceelements.presentation.view.screen.splash.SplashScreen
 import com.enterprise.userinterfaceelements.presentation.view.screen.text.TextScreen
+import com.enterprise.userinterfaceelements.presentation.view.screen.textfield.TextFieldScreen
 import com.enterprise.userinterfaceelements.presentation.view.screen.topappbar.TopAppBarScreen
 
 
@@ -69,6 +70,10 @@ fun AppNavigation(
 
             entry<AppNavigationScreens.PagerScreenRoute> {
                 PagerScreen()
+            }
+
+            entry<AppNavigationScreens.TextFieldScreenRoute> {
+                TextFieldScreen()
             }
 
         }
