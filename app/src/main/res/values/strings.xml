@@ -12,6 +12,8 @@
     <string name="drawer_item_dialog">Dialog</string>
     <string name="drawer_item_lazy_grid">LazyGrid</string>
     <string name="drawer_item_badged_box">BadgedBox</string>
+    <string name="drawer_item_tabs">Tabs</string>
+
 
     <string name="splash_screen_message">Find UI Element</string>
 

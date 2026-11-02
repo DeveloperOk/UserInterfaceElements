@@ -41,4 +41,7 @@ sealed interface AppNavigationScreens: NavKey {
     @Serializable
     object BadgedBoxScreenRoute : AppNavigationScreens
 
+    @Serializable
+    object TabsScreenRoute : AppNavigationScreens
+
 }
