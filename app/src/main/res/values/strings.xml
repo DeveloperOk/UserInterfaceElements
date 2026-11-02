@@ -10,6 +10,7 @@
     <string name="drawer_item_lazy_column">LazyColumn</string>
     <string name="drawer_item_pager">Pager</string>
     <string name="drawer_item_dialog">Dialog</string>
+    <string name="drawer_item_lazy_grid">LazyGrid</string>
 
     <string name="splash_screen_message">Find UI Element</string>
 

@@ -34,4 +34,8 @@ sealed interface AppNavigationScreens: NavKey {
 
     @Serializable
     object DialogScreenRoute : AppNavigationScreens
+
+    @Serializable
+    object LazyGridScreenRoute : AppNavigationScreens
+
 }

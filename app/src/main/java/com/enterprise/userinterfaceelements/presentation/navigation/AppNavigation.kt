@@ -13,6 +13,7 @@ import com.enterprise.userinterfaceelements.presentation.view.screen.button.Butt
 import com.enterprise.userinterfaceelements.presentation.view.screen.dialog.DialogScreen
 import com.enterprise.userinterfaceelements.presentation.view.screen.image.ImageScreen
 import com.enterprise.userinterfaceelements.presentation.view.screen.lazycolumn.LazyColumnScreen
+import com.enterprise.userinterfaceelements.presentation.view.screen.lazygrid.LazyGridScreen
 import com.enterprise.userinterfaceelements.presentation.view.screen.pager.PagerScreen
 import com.enterprise.userinterfaceelements.presentation.view.screen.splash.SplashScreen
 import com.enterprise.userinterfaceelements.presentation.view.screen.text.TextScreen
@@ -80,6 +81,10 @@ fun AppNavigation(
 
             entry<AppNavigationScreens.DialogScreenRoute> {
                 DialogScreen(activityFinisher = activityFinisher)
+            }
+
+            entry<AppNavigationScreens.LazyGridScreenRoute> {
+                LazyGridScreen()
             }
 
         }
