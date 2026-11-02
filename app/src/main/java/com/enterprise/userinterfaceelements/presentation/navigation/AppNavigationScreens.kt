@@ -38,4 +38,7 @@ sealed interface AppNavigationScreens: NavKey {
     @Serializable
     object LazyGridScreenRoute : AppNavigationScreens
 
+    @Serializable
+    object BadgedBoxScreenRoute : AppNavigationScreens
+
 }

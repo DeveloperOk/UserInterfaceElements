@@ -153,6 +153,16 @@ fun DrawerOfModalNavigationDrawer(
                 scope.launch { drawerState.close() }
             })
 
+        Spacer(modifier = Modifier.height(5.dp))
+
+        AppDrawerItem(selected = AppNavigationScreens.BadgedBoxScreenRoute == backStack.lastOrNull(),
+            title = stringResource(id = R.string.drawer_item_badged_box),
+            onClick = {
+                navigateToScreenIfScreenIsNotAlreadyAtTop(backStack = backStack, route = AppNavigationScreens.BadgedBoxScreenRoute)
+                scope.launch { drawerState.close() }
+            })
+
+
     }
 }
 

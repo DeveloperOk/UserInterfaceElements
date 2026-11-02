@@ -9,6 +9,7 @@ import androidx.navigation3.runtime.NavKey
 import androidx.navigation3.runtime.entryProvider
 import androidx.navigation3.runtime.rememberSaveableStateHolderNavEntryDecorator
 import androidx.navigation3.ui.NavDisplay
+import com.enterprise.userinterfaceelements.presentation.view.screen.badgedbox.BadgedBoxScreen
 import com.enterprise.userinterfaceelements.presentation.view.screen.button.ButtonScreen
 import com.enterprise.userinterfaceelements.presentation.view.screen.dialog.DialogScreen
 import com.enterprise.userinterfaceelements.presentation.view.screen.image.ImageScreen
@@ -86,6 +87,11 @@ fun AppNavigation(
             entry<AppNavigationScreens.LazyGridScreenRoute> {
                 LazyGridScreen()
             }
+
+            entry<AppNavigationScreens.BadgedBoxScreenRoute> {
+                BadgedBoxScreen()
+            }
+
 
         }
 
