@@ -32,4 +32,6 @@ sealed interface AppNavigationScreens: NavKey {
     @Serializable
     object TextFieldScreenRoute : AppNavigationScreens
 
+    @Serializable
+    object DialogScreenRoute : AppNavigationScreens
 }

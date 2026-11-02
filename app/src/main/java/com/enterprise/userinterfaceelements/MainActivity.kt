@@ -18,17 +18,20 @@ import com.enterprise.userinterfaceelements.ui.theme.UserInterfaceElementsTheme
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        val activityFinisher = { this.finish()}
+
         enableEdgeToEdge()
         setContent {
             UserInterfaceElementsTheme {
-                UserInterfaceElementsApp()
+                UserInterfaceElementsApp(activityFinisher = activityFinisher)
             }
         }
     }
 }
 
 @Composable
-fun UserInterfaceElementsApp() {
+fun UserInterfaceElementsApp(activityFinisher: () -> Unit) {
 
     //With rememberNavBackStack, backstack survives the configuration changes such as screen rotation etc.
     val backStack = rememberNavBackStack(
@@ -49,7 +52,8 @@ fun UserInterfaceElementsApp() {
     AppModalNavigationDrawer(backStack = backStack,
         scope = scope,
         drawerLocked = drawerLocked,
-        drawerState = drawerState)
+        drawerState = drawerState,
+        activityFinisher = activityFinisher)
 
 }
 

@@ -42,7 +42,8 @@ fun AppModalNavigationDrawer(
     backStack: NavBackStack<NavKey>,
     scope: CoroutineScope,
     drawerLocked: MutableState<Boolean>,
-    drawerState: DrawerState
+    drawerState: DrawerState,
+    activityFinisher: () -> Unit
 ) {
 
     ModalNavigationDrawer(
@@ -50,7 +51,7 @@ fun AppModalNavigationDrawer(
         drawerState = drawerState,
         gesturesEnabled = !drawerLocked.value,
         drawerContent = { DrawerOfModalNavigationDrawer(scope = scope, drawerState = drawerState, backStack = backStack) },
-        content = { ContentOfModalNavigationDrawer(backStack = backStack, drawerLocked = drawerLocked, drawerState = drawerState,) })
+        content = { ContentOfModalNavigationDrawer(backStack = backStack, drawerLocked = drawerLocked, drawerState = drawerState,activityFinisher = activityFinisher) })
 
 }
 
@@ -72,6 +73,15 @@ fun DrawerOfModalNavigationDrawer(
             .padding(10.dp)
             .verticalScroll(rememberScrollState())
     ){
+
+        AppDrawerItem(selected = AppNavigationScreens.DialogScreenRoute == backStack.lastOrNull(),
+            title = stringResource(id = R.string.drawer_item_dialog),
+            onClick = {
+                navigateToScreenIfScreenIsNotAlreadyAtTop(backStack = backStack, route = AppNavigationScreens.DialogScreenRoute)
+                scope.launch { drawerState.close() }
+            })
+
+        Spacer(modifier = Modifier.height(5.dp))
 
         AppDrawerItem(selected = AppNavigationScreens.TextFieldScreenRoute == backStack.lastOrNull(),
             title = stringResource(id = R.string.drawer_item_textfield),
@@ -164,10 +174,11 @@ fun AppDrawerItem(selected: Boolean,
 fun ContentOfModalNavigationDrawer(
     backStack: NavBackStack<NavKey>,
     drawerLocked: MutableState<Boolean>,
-    drawerState: DrawerState
+    drawerState: DrawerState,
+    activityFinisher: () -> Unit
 ) {
 
-    AppNavigation(backStack = backStack, drawerLocked = drawerLocked, drawerState = drawerState,)
+    AppNavigation(backStack = backStack, drawerLocked = drawerLocked, drawerState = drawerState,activityFinisher = activityFinisher)
 
 }
 

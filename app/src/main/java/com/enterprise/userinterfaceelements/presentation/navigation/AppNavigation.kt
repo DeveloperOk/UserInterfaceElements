@@ -10,6 +10,7 @@ import androidx.navigation3.runtime.entryProvider
 import androidx.navigation3.runtime.rememberSaveableStateHolderNavEntryDecorator
 import androidx.navigation3.ui.NavDisplay
 import com.enterprise.userinterfaceelements.presentation.view.screen.button.ButtonScreen
+import com.enterprise.userinterfaceelements.presentation.view.screen.dialog.DialogScreen
 import com.enterprise.userinterfaceelements.presentation.view.screen.image.ImageScreen
 import com.enterprise.userinterfaceelements.presentation.view.screen.lazycolumn.LazyColumnScreen
 import com.enterprise.userinterfaceelements.presentation.view.screen.pager.PagerScreen
@@ -23,7 +24,8 @@ import com.enterprise.userinterfaceelements.presentation.view.screen.topappbar.T
 fun AppNavigation(
     backStack: NavBackStack<NavKey>,
     drawerLocked: MutableState<Boolean>,
-    drawerState: DrawerState
+    drawerState: DrawerState,
+    activityFinisher: () -> Unit
 ) {
 
     NavDisplay(
@@ -74,6 +76,10 @@ fun AppNavigation(
 
             entry<AppNavigationScreens.TextFieldScreenRoute> {
                 TextFieldScreen()
+            }
+
+            entry<AppNavigationScreens.DialogScreenRoute> {
+                DialogScreen(activityFinisher = activityFinisher)
             }
 
         }
