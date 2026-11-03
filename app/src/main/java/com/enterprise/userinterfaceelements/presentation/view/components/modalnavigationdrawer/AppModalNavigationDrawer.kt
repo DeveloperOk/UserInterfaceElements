@@ -119,6 +119,15 @@ fun DrawerOfModalNavigationDrawer(
 
         Spacer(modifier = Modifier.height(5.dp))
 
+        AppDrawerItem(selected = AppNavigationScreens.AndroidViewScreenRoute == backStack.lastOrNull(),
+            title = stringResource(id = R.string.drawer_item_android_view),
+            onClick = {
+                navigateToScreenIfScreenIsNotAlreadyAtTop(backStack = backStack, route = AppNavigationScreens.AndroidViewScreenRoute)
+                scope.launch { drawerState.close() }
+            })
+
+        Spacer(modifier = Modifier.height(5.dp))
+
         AppDrawerItem(selected = AppNavigationScreens.LazyGridScreenRoute == backStack.lastOrNull(),
             title = stringResource(id = R.string.drawer_item_lazy_grid),
             onClick = {

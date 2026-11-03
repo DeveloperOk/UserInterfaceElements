@@ -50,4 +50,7 @@ sealed interface AppNavigationScreens: NavKey {
     @Serializable
     object CanvasScreenRoute : AppNavigationScreens
 
+    @Serializable
+    object AndroidViewScreenRoute : AppNavigationScreens
+
 }

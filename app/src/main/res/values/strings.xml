@@ -15,6 +15,7 @@
     <string name="drawer_item_tabs">Tabs</string>
     <string name="drawer_item_constraint_layout">ConstraintLayout</string>
     <string name="drawer_item_canvas">Canvas</string>
+    <string name="drawer_item_android_view">AndroidView</string>
 
     <string name="splash_screen_message">Find UI Element</string>
 
@@ -41,5 +42,7 @@
     <string name="dialog_message">Would you like to exit?</string>
     <string name="dialog_positive_button_text">Yes</string>
     <string name="dialog_negative_button_text">No</string>
+
+    <string name="android_view_screen_textview_text">TextView Provided by AndroidView</string>
 
 </resources>
