@@ -18,6 +18,7 @@
     <string name="drawer_item_android_view">AndroidView</string>
     <string name="drawer_item_progress_indicator">ProgressIndicator</string>
     <string name="drawer_item_various_elements">Various Elements</string>
+    <string name="drawer_item_snackbar">Snackbar</string>
 
     <string name="splash_screen_message">Find UI Element</string>
 

@@ -59,5 +59,8 @@ sealed interface AppNavigationScreens: NavKey {
     @Serializable
     object VariousElementsScreenRoute : AppNavigationScreens
 
+    @Serializable
+    object SnackbarScreenRoute : AppNavigationScreens
+
 
 }

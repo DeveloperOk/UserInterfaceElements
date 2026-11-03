@@ -128,6 +128,15 @@ fun DrawerOfModalNavigationDrawer(
 
         Spacer(modifier = Modifier.height(5.dp))
 
+        AppDrawerItem(selected = AppNavigationScreens.SnackbarScreenRoute == backStack.lastOrNull(),
+            title = stringResource(id = R.string.drawer_item_snackbar),
+            onClick = {
+                navigateToScreenIfScreenIsNotAlreadyAtTop(backStack = backStack, route = AppNavigationScreens.SnackbarScreenRoute)
+                scope.launch { drawerState.close() }
+            })
+
+        Spacer(modifier = Modifier.height(5.dp))
+
         AppDrawerItem(selected = AppNavigationScreens.LazyGridScreenRoute == backStack.lastOrNull(),
             title = stringResource(id = R.string.drawer_item_lazy_grid),
             onClick = {

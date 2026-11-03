@@ -21,6 +21,7 @@ import com.enterprise.userinterfaceelements.presentation.view.screen.lazycolumn.
 import com.enterprise.userinterfaceelements.presentation.view.screen.lazygrid.LazyGridScreen
 import com.enterprise.userinterfaceelements.presentation.view.screen.pager.PagerScreen
 import com.enterprise.userinterfaceelements.presentation.view.screen.progressindicator.ProgressIndicatorScreen
+import com.enterprise.userinterfaceelements.presentation.view.screen.snackbar.SnackbarScreen
 import com.enterprise.userinterfaceelements.presentation.view.screen.splash.SplashScreen
 import com.enterprise.userinterfaceelements.presentation.view.screen.tabs.TabsScreen
 import com.enterprise.userinterfaceelements.presentation.view.screen.text.TextScreen
@@ -157,6 +158,10 @@ private fun EntryProviderScope<NavKey>.otherScreens(backStack: NavBackStack<NavK
 
     entry<AppNavigationScreens.VariousElementsScreenRoute> {
         VariousElementsScreen()
+    }
+
+    entry<AppNavigationScreens.SnackbarScreenRoute> {
+        SnackbarScreen()
     }
 
 }
