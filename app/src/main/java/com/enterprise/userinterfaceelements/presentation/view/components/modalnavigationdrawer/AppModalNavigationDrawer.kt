@@ -225,6 +225,15 @@ fun DrawerOfModalNavigationDrawer(
                 scope.launch { drawerState.close() }
             })
 
+        Spacer(modifier = Modifier.height(5.dp))
+
+        AppDrawerItem(selected = AppNavigationScreens.VariousElementsScreenRoute == backStack.lastOrNull(),
+            title = stringResource(id = R.string.drawer_item_various_elements),
+            onClick = {
+                navigateToScreenIfScreenIsNotAlreadyAtTop(backStack = backStack, route = AppNavigationScreens.VariousElementsScreenRoute)
+                scope.launch { drawerState.close() }
+            })
+
 
     }
 }

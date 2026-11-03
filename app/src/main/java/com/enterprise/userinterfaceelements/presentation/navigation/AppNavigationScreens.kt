@@ -56,5 +56,8 @@ sealed interface AppNavigationScreens: NavKey {
     @Serializable
     object ProgressIndicatorScreenRoute : AppNavigationScreens
 
+    @Serializable
+    object VariousElementsScreenRoute : AppNavigationScreens
+
 
 }

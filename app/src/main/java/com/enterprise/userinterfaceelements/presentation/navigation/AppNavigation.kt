@@ -26,6 +26,7 @@ import com.enterprise.userinterfaceelements.presentation.view.screen.tabs.TabsSc
 import com.enterprise.userinterfaceelements.presentation.view.screen.text.TextScreen
 import com.enterprise.userinterfaceelements.presentation.view.screen.textfield.TextFieldScreen
 import com.enterprise.userinterfaceelements.presentation.view.screen.topappbar.TopAppBarScreen
+import com.enterprise.userinterfaceelements.presentation.view.screen.variouselements.VariousElementsScreen
 
 
 @Composable
@@ -152,6 +153,10 @@ private fun EntryProviderScope<NavKey>.otherScreens(backStack: NavBackStack<NavK
 
     entry<AppNavigationScreens.ProgressIndicatorScreenRoute> {
         ProgressIndicatorScreen()
+    }
+
+    entry<AppNavigationScreens.VariousElementsScreenRoute> {
+        VariousElementsScreen()
     }
 
 }
