@@ -53,4 +53,8 @@ sealed interface AppNavigationScreens: NavKey {
     @Serializable
     object AndroidViewScreenRoute : AppNavigationScreens
 
+    @Serializable
+    object ProgressIndicatorScreenRoute : AppNavigationScreens
+
+
 }

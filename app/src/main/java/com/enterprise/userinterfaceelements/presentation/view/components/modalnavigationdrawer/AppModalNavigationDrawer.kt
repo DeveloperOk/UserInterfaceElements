@@ -216,6 +216,15 @@ fun DrawerOfModalNavigationDrawer(
                 scope.launch { drawerState.close() }
             })
 
+        Spacer(modifier = Modifier.height(5.dp))
+
+        AppDrawerItem(selected = AppNavigationScreens.ProgressIndicatorScreenRoute == backStack.lastOrNull(),
+            title = stringResource(id = R.string.drawer_item_progress_indicator),
+            onClick = {
+                navigateToScreenIfScreenIsNotAlreadyAtTop(backStack = backStack, route = AppNavigationScreens.ProgressIndicatorScreenRoute)
+                scope.launch { drawerState.close() }
+            })
+
 
     }
 }

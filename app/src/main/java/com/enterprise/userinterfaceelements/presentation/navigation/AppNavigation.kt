@@ -20,6 +20,7 @@ import com.enterprise.userinterfaceelements.presentation.view.screen.image.Image
 import com.enterprise.userinterfaceelements.presentation.view.screen.lazycolumn.LazyColumnScreen
 import com.enterprise.userinterfaceelements.presentation.view.screen.lazygrid.LazyGridScreen
 import com.enterprise.userinterfaceelements.presentation.view.screen.pager.PagerScreen
+import com.enterprise.userinterfaceelements.presentation.view.screen.progressindicator.ProgressIndicatorScreen
 import com.enterprise.userinterfaceelements.presentation.view.screen.splash.SplashScreen
 import com.enterprise.userinterfaceelements.presentation.view.screen.tabs.TabsScreen
 import com.enterprise.userinterfaceelements.presentation.view.screen.text.TextScreen
@@ -147,6 +148,10 @@ private fun EntryProviderScope<NavKey>.otherScreens(backStack: NavBackStack<NavK
 
     entry<AppNavigationScreens.AndroidViewScreenRoute> {
         AndroidViewScreen()
+    }
+
+    entry<AppNavigationScreens.ProgressIndicatorScreenRoute> {
+        ProgressIndicatorScreen()
     }
 
 }

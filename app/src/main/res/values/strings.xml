@@ -16,6 +16,7 @@
     <string name="drawer_item_constraint_layout">ConstraintLayout</string>
     <string name="drawer_item_canvas">Canvas</string>
     <string name="drawer_item_android_view">AndroidView</string>
+    <string name="drawer_item_progress_indicator">ProgressIndicator</string>
 
     <string name="splash_screen_message">Find UI Element</string>
 
