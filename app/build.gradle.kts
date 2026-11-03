@@ -44,13 +44,14 @@ android {
 dependencies {
 
 
+    //Compose Constraint Layout
+    implementation(libs.androidx.constraintlayout.compose)
+
     //Navigation3
     implementation(libs.androidx.navigation3.runtime)
     implementation(libs.androidx.navigation3.ui)
-
     // JSON serialization library, works with the Kotlin serialization plugin
     implementation(libs.kotlinx.serialization.json)
-
     //Navigation3 ViewModel
     implementation(libs.androidx.lifecycle.viewmodel.compose)
     implementation(libs.androidx.lifecycle.viewmodel.navigation3)

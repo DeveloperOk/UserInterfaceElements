@@ -11,6 +11,7 @@ import androidx.navigation3.runtime.rememberSaveableStateHolderNavEntryDecorator
 import androidx.navigation3.ui.NavDisplay
 import com.enterprise.userinterfaceelements.presentation.view.screen.badgedbox.BadgedBoxScreen
 import com.enterprise.userinterfaceelements.presentation.view.screen.button.ButtonScreen
+import com.enterprise.userinterfaceelements.presentation.view.screen.constraintlayout.ConstraintLayoutScreen
 import com.enterprise.userinterfaceelements.presentation.view.screen.dialog.DialogScreen
 import com.enterprise.userinterfaceelements.presentation.view.screen.image.ImageScreen
 import com.enterprise.userinterfaceelements.presentation.view.screen.lazycolumn.LazyColumnScreen
@@ -95,6 +96,10 @@ fun AppNavigation(
 
             entry<AppNavigationScreens.TabsScreenRoute> {
                 TabsScreen()
+            }
+
+            entry<AppNavigationScreens.ConstraintLayoutScreenRoute> {
+                ConstraintLayoutScreen()
             }
 
 

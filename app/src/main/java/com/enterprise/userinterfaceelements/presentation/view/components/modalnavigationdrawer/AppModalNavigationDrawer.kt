@@ -18,10 +18,15 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.DrawerState
+import androidx.compose.material3.DrawerValue
 import androidx.compose.material3.ModalNavigationDrawer
 import androidx.compose.material3.Text
+import androidx.compose.material3.rememberDrawerState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.MutableState
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.rememberCoroutineScope
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -29,6 +34,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation3.runtime.NavBackStack
 import androidx.navigation3.runtime.NavKey
+import androidx.navigation3.runtime.rememberNavBackStack
 import com.enterprise.userinterfaceelements.R
 import com.enterprise.userinterfaceelements.presentation.navigation.AppNavigation
 import com.enterprise.userinterfaceelements.presentation.navigation.AppNavigationScreens
@@ -39,12 +45,24 @@ import kotlinx.coroutines.launch
 
 @Composable
 fun AppModalNavigationDrawer(
-    backStack: NavBackStack<NavKey>,
-    scope: CoroutineScope,
-    drawerLocked: MutableState<Boolean>,
-    drawerState: DrawerState,
     activityFinisher: () -> Unit
 ) {
+
+    //With rememberNavBackStack, backstack survives the configuration changes such as screen rotation etc.
+    val backStack = rememberNavBackStack(
+        //NavigationStartScreen
+        AppNavigationScreens.SplashScreenRoute
+    )
+
+    val scope = rememberCoroutineScope()
+    val drawerLocked = rememberSaveable { mutableStateOf(false) }
+
+    val drawerState = rememberDrawerState(
+        initialValue = DrawerValue.Closed,
+        confirmStateChange = { newValue ->
+            !drawerLocked.value || newValue == DrawerValue.Closed
+        }
+    )
 
     ModalNavigationDrawer(
         modifier = Modifier.fillMaxSize(),
@@ -168,6 +186,15 @@ fun DrawerOfModalNavigationDrawer(
             title = stringResource(id = R.string.drawer_item_badged_box),
             onClick = {
                 navigateToScreenIfScreenIsNotAlreadyAtTop(backStack = backStack, route = AppNavigationScreens.BadgedBoxScreenRoute)
+                scope.launch { drawerState.close() }
+            })
+
+        Spacer(modifier = Modifier.height(5.dp))
+
+        AppDrawerItem(selected = AppNavigationScreens.ConstraintLayoutScreenRoute == backStack.lastOrNull(),
+            title = stringResource(id = R.string.drawer_item_constraint_layout),
+            onClick = {
+                navigateToScreenIfScreenIsNotAlreadyAtTop(backStack = backStack, route = AppNavigationScreens.ConstraintLayoutScreenRoute)
                 scope.launch { drawerState.close() }
             })
 

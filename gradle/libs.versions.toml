@@ -18,6 +18,9 @@ kotlinx-serialization-json = "1.12.0"
 # Navigation3 ViewModel
 lifecycle = "2.11.0"
 
+# Compose Constraint Layout
+constraintlayout-compose = "1.1.2"
+
 #plugins
 kotlin-serialization = "2.4.21"
 
@@ -32,6 +35,9 @@ kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serializa
 #Navigation3 ViewModel
 androidx-lifecycle-viewmodel-compose = { module = "androidx.lifecycle:lifecycle-viewmodel-compose", version.ref = "lifecycle" }
 androidx-lifecycle-viewmodel-navigation3 = { module = "androidx.lifecycle:lifecycle-viewmodel-navigation3", version.ref = "lifecycle" }
+
+#Compose Constraint Layout
+androidx-constraintlayout-compose = { module = "androidx.constraintlayout:constraintlayout-compose", version.ref = "constraintlayout-compose" }
 
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }

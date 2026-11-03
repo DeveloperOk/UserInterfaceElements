@@ -44,4 +44,7 @@ sealed interface AppNavigationScreens: NavKey {
     @Serializable
     object TabsScreenRoute : AppNavigationScreens
 
+    @Serializable
+    object ConstraintLayoutScreenRoute : AppNavigationScreens
+
 }
