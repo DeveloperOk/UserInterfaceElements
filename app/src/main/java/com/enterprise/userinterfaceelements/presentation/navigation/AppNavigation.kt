@@ -4,6 +4,7 @@ import androidx.compose.material3.DrawerState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.MutableState
 import androidx.lifecycle.viewmodel.navigation3.rememberViewModelStoreNavEntryDecorator
+import androidx.navigation3.runtime.EntryProviderScope
 import androidx.navigation3.runtime.NavBackStack
 import androidx.navigation3.runtime.NavKey
 import androidx.navigation3.runtime.entryProvider
@@ -47,71 +48,11 @@ fun AppNavigation(
 
         entryProvider = entryProvider {
 
-            entry<AppNavigationScreens.SplashScreenRoute> {
-                SplashScreen(drawerLocked = drawerLocked, navigateToMainScreen = {
+            mainScreens(backStack = backStack, drawerState = drawerState)
 
-                    navigateToScreenIfScreenIsNotAlreadyAtTop(backStack = backStack, route = AppNavigationScreens.TextScreenRoute)
-                    backStack.removeAt(0)
-
-                })
-            }
-
-            entry<AppNavigationScreens.ImageScreenRoute> {
-                ImageScreen(backStack = backStack)
-            }
-
-            entry<AppNavigationScreens.TextScreenRoute> {
-                TextScreen(backStack = backStack, drawerState = drawerState,)
-            }
-
-            entry<AppNavigationScreens.ButtonScreenRoute> {
-                ButtonScreen(backStack = backStack)
-            }
-
-            entry<AppNavigationScreens.TopAppBarScreenRoute> {
-                TopAppBarScreen(backStack = backStack)
-            }
-
-            entry<AppNavigationScreens.LazyColumnScreenRoute> {
-                LazyColumnScreen()
-            }
-
-            entry<AppNavigationScreens.PagerScreenRoute> {
-                PagerScreen()
-            }
-
-            entry<AppNavigationScreens.TextFieldScreenRoute> {
-                TextFieldScreen()
-            }
-
-            entry<AppNavigationScreens.DialogScreenRoute> {
-                DialogScreen(activityFinisher = activityFinisher)
-            }
-
-            entry<AppNavigationScreens.LazyGridScreenRoute> {
-                LazyGridScreen()
-            }
-
-            entry<AppNavigationScreens.BadgedBoxScreenRoute> {
-                BadgedBoxScreen()
-            }
-
-            entry<AppNavigationScreens.TabsScreenRoute> {
-                TabsScreen()
-            }
-
-            entry<AppNavigationScreens.ConstraintLayoutScreenRoute> {
-                ConstraintLayoutScreen()
-            }
-
-            entry<AppNavigationScreens.CanvasScreenRoute> {
-                CanvasScreen()
-            }
-
-            entry<AppNavigationScreens.AndroidViewScreenRoute> {
-                AndroidViewScreen()
-            }
-
+            otherScreens(backStack = backStack,
+                drawerLocked = drawerLocked,
+                activityFinisher = activityFinisher)
 
         }
 
@@ -132,6 +73,80 @@ fun navigateToScreenIfScreenIsNotAlreadyAtTop(
 
         backStack.add(route)
 
+    }
+
+}
+
+private fun EntryProviderScope<NavKey>.mainScreens(backStack: NavBackStack<NavKey>, drawerState: DrawerState) {
+    entry<AppNavigationScreens.ImageScreenRoute> {
+        ImageScreen(backStack = backStack)
+    }
+
+    entry<AppNavigationScreens.TextScreenRoute> {
+        TextScreen(backStack = backStack, drawerState = drawerState)
+    }
+
+    entry<AppNavigationScreens.ButtonScreenRoute> {
+        ButtonScreen(backStack = backStack)
+    }
+}
+
+
+private fun EntryProviderScope<NavKey>.otherScreens(backStack: NavBackStack<NavKey>,
+                                                    drawerLocked: MutableState<Boolean>,
+                                                    activityFinisher: () -> Unit){
+
+    entry<AppNavigationScreens.SplashScreenRoute> {
+        SplashScreen(drawerLocked = drawerLocked, navigateToMainScreen = {
+
+            navigateToScreenIfScreenIsNotAlreadyAtTop(backStack = backStack, route = AppNavigationScreens.TextScreenRoute)
+            backStack.removeAt(0)
+
+        })
+    }
+
+    entry<AppNavigationScreens.TopAppBarScreenRoute> {
+        TopAppBarScreen(backStack = backStack)
+    }
+
+    entry<AppNavigationScreens.LazyColumnScreenRoute> {
+        LazyColumnScreen()
+    }
+
+    entry<AppNavigationScreens.PagerScreenRoute> {
+        PagerScreen()
+    }
+
+    entry<AppNavigationScreens.TextFieldScreenRoute> {
+        TextFieldScreen()
+    }
+
+    entry<AppNavigationScreens.DialogScreenRoute> {
+        DialogScreen(activityFinisher = activityFinisher)
+    }
+
+    entry<AppNavigationScreens.LazyGridScreenRoute> {
+        LazyGridScreen()
+    }
+
+    entry<AppNavigationScreens.BadgedBoxScreenRoute> {
+        BadgedBoxScreen()
+    }
+
+    entry<AppNavigationScreens.TabsScreenRoute> {
+        TabsScreen()
+    }
+
+    entry<AppNavigationScreens.ConstraintLayoutScreenRoute> {
+        ConstraintLayoutScreen()
+    }
+
+    entry<AppNavigationScreens.CanvasScreenRoute> {
+        CanvasScreen()
+    }
+
+    entry<AppNavigationScreens.AndroidViewScreenRoute> {
+        AndroidViewScreen()
     }
 
 }
