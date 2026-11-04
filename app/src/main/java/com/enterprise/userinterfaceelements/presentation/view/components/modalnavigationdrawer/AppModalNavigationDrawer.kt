@@ -137,6 +137,15 @@ fun DrawerOfModalNavigationDrawer(
 
         Spacer(modifier = Modifier.height(5.dp))
 
+        AppDrawerItem(selected = AppNavigationScreens.PullToRefreshBoxScreenRoute == backStack.lastOrNull(),
+            title = stringResource(id = R.string.drawer_item_pull_to_refresh_box),
+            onClick = {
+                navigateToScreenIfScreenIsNotAlreadyAtTop(backStack = backStack, route = AppNavigationScreens.PullToRefreshBoxScreenRoute)
+                scope.launch { drawerState.close() }
+            })
+
+        Spacer(modifier = Modifier.height(5.dp))
+
         AppDrawerItem(selected = AppNavigationScreens.LazyGridScreenRoute == backStack.lastOrNull(),
             title = stringResource(id = R.string.drawer_item_lazy_grid),
             onClick = {
