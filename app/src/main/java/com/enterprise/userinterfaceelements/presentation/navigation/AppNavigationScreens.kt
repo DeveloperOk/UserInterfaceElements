@@ -65,5 +65,7 @@ sealed interface AppNavigationScreens: NavKey {
     @Serializable
     object PullToRefreshBoxScreenRoute : AppNavigationScreens
 
+    @Serializable
+    object BottomSheetScreenRoute : AppNavigationScreens
 
 }

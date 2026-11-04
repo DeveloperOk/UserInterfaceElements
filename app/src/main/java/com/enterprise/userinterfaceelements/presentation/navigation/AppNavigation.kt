@@ -12,6 +12,7 @@ import androidx.navigation3.runtime.rememberSaveableStateHolderNavEntryDecorator
 import androidx.navigation3.ui.NavDisplay
 import com.enterprise.userinterfaceelements.presentation.view.screen.androidview.AndroidViewScreen
 import com.enterprise.userinterfaceelements.presentation.view.screen.badgedbox.BadgedBoxScreen
+import com.enterprise.userinterfaceelements.presentation.view.screen.bottomsheet.BottomSheetScreen
 import com.enterprise.userinterfaceelements.presentation.view.screen.button.ButtonScreen
 import com.enterprise.userinterfaceelements.presentation.view.screen.canvas.CanvasScreen
 import com.enterprise.userinterfaceelements.presentation.view.screen.constraintlayout.ConstraintLayoutScreen
@@ -167,6 +168,10 @@ private fun EntryProviderScope<NavKey>.otherScreens(backStack: NavBackStack<NavK
 
     entry<AppNavigationScreens.PullToRefreshBoxScreenRoute> {
         PullToRefreshBoxScreen()
+    }
+
+    entry<AppNavigationScreens.BottomSheetScreenRoute> {
+        BottomSheetScreen()
     }
 
 }
