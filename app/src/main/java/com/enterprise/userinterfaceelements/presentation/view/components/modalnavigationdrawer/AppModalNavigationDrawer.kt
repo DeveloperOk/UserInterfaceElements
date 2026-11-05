@@ -155,6 +155,15 @@ fun DrawerOfModalNavigationDrawer(
 
         Spacer(modifier = Modifier.height(5.dp))
 
+        AppDrawerItem(selected = AppNavigationScreens.DropdownMenuScreenRoute == backStack.lastOrNull(),
+            title = stringResource(id = R.string.drawer_item_dropdown_menu),
+            onClick = {
+                navigateToScreenIfScreenIsNotAlreadyAtTop(backStack = backStack, route = AppNavigationScreens.DropdownMenuScreenRoute)
+                scope.launch { drawerState.close() }
+            })
+
+        Spacer(modifier = Modifier.height(5.dp))
+
         AppDrawerItem(selected = AppNavigationScreens.TextFieldScreenRoute == backStack.lastOrNull(),
             title = stringResource(id = R.string.drawer_item_textfield),
             onClick = {

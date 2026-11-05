@@ -68,4 +68,7 @@ sealed interface AppNavigationScreens: NavKey {
     @Serializable
     object BottomSheetScreenRoute : AppNavigationScreens
 
+    @Serializable
+    object DropdownMenuScreenRoute : AppNavigationScreens
+
 }

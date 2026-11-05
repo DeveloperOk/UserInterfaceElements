@@ -17,6 +17,7 @@ import com.enterprise.userinterfaceelements.presentation.view.screen.button.Butt
 import com.enterprise.userinterfaceelements.presentation.view.screen.canvas.CanvasScreen
 import com.enterprise.userinterfaceelements.presentation.view.screen.constraintlayout.ConstraintLayoutScreen
 import com.enterprise.userinterfaceelements.presentation.view.screen.dialog.DialogScreen
+import com.enterprise.userinterfaceelements.presentation.view.screen.dropdownmenu.DropdownMenuScreen
 import com.enterprise.userinterfaceelements.presentation.view.screen.image.ImageScreen
 import com.enterprise.userinterfaceelements.presentation.view.screen.lazycolumn.LazyColumnScreen
 import com.enterprise.userinterfaceelements.presentation.view.screen.lazygrid.LazyGridScreen
@@ -172,6 +173,10 @@ private fun EntryProviderScope<NavKey>.otherScreens(backStack: NavBackStack<NavK
 
     entry<AppNavigationScreens.BottomSheetScreenRoute> {
         BottomSheetScreen()
+    }
+
+    entry<AppNavigationScreens.DropdownMenuScreenRoute> {
+        DropdownMenuScreen()
     }
 
 }

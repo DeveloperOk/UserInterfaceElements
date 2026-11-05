@@ -21,7 +21,7 @@
     <string name="drawer_item_snackbar">Snackbar</string>
     <string name="drawer_item_pull_to_refresh_box">PullToRefreshBox</string>
     <string name="drawer_item_bottom_sheet">BottomSheet</string>
-
+    <string name="drawer_item_dropdown_menu">DropdownMenu</string>
 
     <string name="splash_screen_message">Find UI Element</string>
 
