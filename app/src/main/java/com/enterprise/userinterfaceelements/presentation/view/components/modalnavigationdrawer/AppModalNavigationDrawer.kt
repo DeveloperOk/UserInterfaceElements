@@ -218,6 +218,15 @@ fun DrawerOfModalNavigationDrawer(
 
         Spacer(modifier = Modifier.height(5.dp))
 
+        AppDrawerItem(selected = AppNavigationScreens.DateAndTimePickersScreenRoute == backStack.lastOrNull(),
+            title = stringResource(id = R.string.drawer_item_date_and_time_pickers),
+            onClick = {
+                navigateToScreenIfScreenIsNotAlreadyAtTop(backStack = backStack, route = AppNavigationScreens.DateAndTimePickersScreenRoute)
+                scope.launch { drawerState.close() }
+            })
+
+        Spacer(modifier = Modifier.height(5.dp))
+
         AppDrawerItem(selected = AppNavigationScreens.PagerScreenRoute == backStack.lastOrNull(),
             title = stringResource(id = R.string.drawer_item_pager),
             onClick = {

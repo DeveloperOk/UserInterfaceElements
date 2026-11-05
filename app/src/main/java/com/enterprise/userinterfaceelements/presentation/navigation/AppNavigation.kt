@@ -16,6 +16,7 @@ import com.enterprise.userinterfaceelements.presentation.view.screen.bottomsheet
 import com.enterprise.userinterfaceelements.presentation.view.screen.button.ButtonScreen
 import com.enterprise.userinterfaceelements.presentation.view.screen.canvas.CanvasScreen
 import com.enterprise.userinterfaceelements.presentation.view.screen.constraintlayout.ConstraintLayoutScreen
+import com.enterprise.userinterfaceelements.presentation.view.screen.dateandtimepicker.DateAndTimePickersScreen
 import com.enterprise.userinterfaceelements.presentation.view.screen.dialog.DialogScreen
 import com.enterprise.userinterfaceelements.presentation.view.screen.dropdownmenu.DropdownMenuScreen
 import com.enterprise.userinterfaceelements.presentation.view.screen.image.ImageScreen
@@ -177,6 +178,10 @@ private fun EntryProviderScope<NavKey>.otherScreens(backStack: NavBackStack<NavK
 
     entry<AppNavigationScreens.DropdownMenuScreenRoute> {
         DropdownMenuScreen()
+    }
+
+    entry<AppNavigationScreens.DateAndTimePickersScreenRoute> {
+        DateAndTimePickersScreen()
     }
 
 }

@@ -71,4 +71,7 @@ sealed interface AppNavigationScreens: NavKey {
     @Serializable
     object DropdownMenuScreenRoute : AppNavigationScreens
 
+    @Serializable
+    object DateAndTimePickersScreenRoute : AppNavigationScreens
+
 }
